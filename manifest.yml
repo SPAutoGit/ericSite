@@ -1,0 +1,7 @@
+---
+applications:
+- name: resume
+  memory: 256MB
+  disk_quota: 1gb
+  buildpack: python_buildpack
+  command: gunicorn resume.wsgi --workers 1

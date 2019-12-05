@@ -1,0 +1,98 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Eric Yager - MS, PMP</title>
+  <link rel="icon" href="{% static 'resume_site/favicon/favicon.ico'%}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'resume_site/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'resume_site/css/mdb.min.css' %}" rel="stylesheet">
+  <link href="{% static 'resume_site/css/addons/datatables.min.css' %}" rel="stylesheet">
+  <style>
+      .top-nav-collapse {
+          background-color: black!important;
+      }
+      .navbar:not(.top-nav-collapse) {
+          background: transparent!important;
+      }
+      @media (max-width: 850px) {
+          .navbar:not(.top-nav-collapse) {
+              background: black!important;
+          }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+          .navbar:not(.top-nav-collapse) {
+              background: black!important;
+          }
+      }
+  </style>
+</head>
+<header>  
+    <!--Navbar Code-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarCollapse" >
+        <!--Only show links if user has been authenticated-->
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item" style="margin:2px;">
+                <a href="{% url 'home' %}" class="nav-link{% if request.resolver_match.view_name == 'home' %} active{% endif %}"><p class="h5">Home</p></a>
+              </li>
+              <li class="nav-item" style="margin:2px;">|</li>
+              <li class="nav-item" style="margin:2px;" data-turbolinks="false">
+                <a class="nav-link{% if request.resolver_match.view_name == 'projects' %} active{% endif %}" href="/about"><p class="h5">About Me</p></a>
+              </li>
+              <li class="nav-item" style="margin:2px;">|</li>
+              <li class="nav-item" style="margin:2px;" data-turbolinks="false">
+                <a class="nav-link{% if request.resolver_match.view_name == 'feedback' %} active{% endif %}" href="/resume"><p class="h5"><i class="fas fa-file-pdf"></i>Resume</p></a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+<body>     
+    <!--Main Body-->
+    <!--Call the block content-->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'resume_site/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'resume_site/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'resume_site/js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'resume_site/js/mdb.min.js' %}"></script>
+    <!-- Sortable table JS -->
+    <script type="text/javascript" src="{% static 'resume_site/js/addons/datatables.min.js' %}"></script>
+    <!--apexChartJS-->
+    <script type="text/javascript" src="{% static 'resume_site/js/apexchart.js' %}"></script>
+    <!-- chartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- Tablesorter and widget -->
+    <script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+    <script>
+        $(document).ready(function () {
+        $('#sortTable').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+        });
+        $('.dataTables_length').addClass('bs-select');
+        $('.carousel').carousel('pause');
+    </script>
+    {% block content %}{% endblock %}
+  </body>
+</html>

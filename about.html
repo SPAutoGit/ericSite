@@ -1,0 +1,136 @@
+{% extends "resume_site/layout.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="row bg-dark" style="height:80px;"></div>
+<div class="row" style="height:20px;"></div>
+
+<div class="row">
+    <div class="col">
+        <h4 class="display-5 text-center">Role experience</h4>
+        <hr>
+        <canvas id="experience" style="max-width: 1000px;"></canvas>
+    </div>
+        <div class="col" style="background: white;">
+        <h4 class="display-5 text-center">Employer experience</h4>
+        <hr>
+        <canvas id="company" style="max-width: 1000px;"></canvas>
+    </div>
+</div>
+<hr>
+<p class="note note-primary"><strong>About Me:</strong> I'm a technical program manager at Dell Technologies in the Server Procurement Organization.</p>
+<p class="note note-primary"><strong>Day to Day:</strong> My primary role is as the TPM and principal developer for Server Procurement's digital transformation program.
+This includes developing Python-based automation solutions, managing a Django web application, managing an MSSQL server and databases, and managing a team of developers and project managers</p>
+<p class="note note-primary"><strong>Outside Work:</strong> Outside work, I help run a hobby farm outside Autin, Texas with my wife and two children.  
+We have 3 horses and 6 chickens along with a few dogs and cats.  I'm also an amateur woodworker building primarily furniture and log-themed decorations.</p>
+
+
+
+
+
+<script>
+    var ctx = document.getElementById("experience").getContext('2d');
+    var experience = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Project/Program Management", "Technical PM", "Python Development", "Data Analytics"],
+            datasets: [{
+                label: 'Years of Experience',
+                data: [10, 3, 3, 4],
+                backgroundColor: [
+                    'rgba(111, 185, 214, 0.6)',
+                    'rgba(67, 146, 177, 0.6)',
+                    'rgba(37, 122, 156, 0.6)',
+                    'rgba(31, 66, 80, 0.6)',
+                ],
+                borderColor: [
+                    'rgba(111, 185, 214, 0.1)',
+                    'rgba(67, 146, 177, 0.1)',
+                    'rgba(37, 122, 156, 0.1)',
+                    'rgba(31, 66, 80, 0.1)',
+                ],
+                hoverBackgroundColor: [
+                    'rgba(111, 185, 214,1)',
+                    'rgba(67, 146, 177, 1)',
+                    'rgba(37, 122, 156, 1)',
+                    'rgba(31, 66, 80, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                {
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true
+                    }
+
+                }]
+            }
+        }
+    });
+    var ctx2 = document.getElementById("company").getContext('2d');
+    var company = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: {
+            labels: ["Dell Technologies", "Baylor Scott and White", "SOCOM", "USASOC", "US Army"],
+            datasets: [{
+                label: 'Months of Experience',
+                data: [14, 6, 18, 36,48],
+                backgroundColor: [
+                    'rgba(111, 185, 214, 0.6)',
+                    'rgba(67, 146, 177, 0.6)',
+                    'rgba(37, 122, 156, 0.6)',
+                    'rgba(31, 66, 80, 0.6)',
+                    'rgba(56, 63, 65, 0.6)',
+                ],
+                borderColor: [
+                    'rgba(111, 185, 214, 0.1)',
+                    'rgba(67, 146, 177, 0.1)',
+                    'rgba(37, 122, 156, 0.1)',
+                    'rgba(31, 66, 80, 0.1)',
+                    'rgba(56, 63, 65, 0.1)',
+                ],
+                hoverBackgroundColor: [
+                    'rgba(111, 185, 214,1)',
+                    'rgba(67, 146, 177, 1)',
+                    'rgba(37, 122, 156, 1)',
+                    'rgba(31, 66, 80, 1)',
+                    'rgba(56, 63, 65, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                {
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        display: false,
+                        beginAtZero: true
+                    }
+
+                }],
+                xAxes: [
+                {
+                    gridLines: {
+                        display: false
+                    }
+
+                }]
+            }
+        }
+    });
+
+
+
+</script>
+{% endblock %}

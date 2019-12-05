@@ -1,0 +1,124 @@
+{% extends "resume_site/layout.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div id="home" class="smooth-scroll view jarallax" data-jarallax='{"speed": 0.8}' style="background-image: url('/static/resume_site/img/jumbotron.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <div class="mask rgba-black-strong">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <div class="row pt-5 mt-3">
+          <div class="col-md-12 mb-3">
+            <div class="intro-info-content text-center">
+                <h1 class="display-3 white-text wow animated fadeInLeft" data-wow-duration="0.8s">Eric<a class="orange-text font-weight-bold">Yager</a></h1>
+                <div class="row" style="height:100px;"></div>
+                <div class="row">
+                  <div class="col-fluid text-center" style="width:350px;">
+                    <h4 class="display-5 deep-orange-text font-weight-bold wow animated fadeInRight delay-1s" data-wow-duration="3.8s">Technical Program Manager</h4>
+                    <h5 class="white-text font-weight-light wow animated fadeIn delay-4s" data-wow-duration="3.8s">Dell Technologies</h5>
+                  </div>
+                  <div class="col-fluid text-center" style="width:350px;">
+                    <h4 class="display-5 deep-orange-text font-weight-bold wow animated fadeInRight delay-2s" data-wow-duration="3.8s">M.S. Business Analytics</h4>
+                    <h5 class="white-text font-weight-light wow animated fadeIn delay-4s" data-wow-duration="3.8s">Syracuse University</h5>
+                  </div>
+                  <div class="col-fluid text-center" style="width:350px;">
+                    <h4 class="display-5 deep-orange-text font-weight-bold wow animated fadeInRight delay-3s" data-wow-duration="3.8s">PMP (exp.2021)</h4>
+                    <h5 class="white-text font-weight-light wow animated fadeIn delay-4s" data-wow-duration="3.8s">Project Management Institute</h5>
+                  </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class = "row" style="height:20px"></div>
+<div class="row" >
+  <!-- Button trigger modal -->
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="{% static 'images/Dev.png'%}" height="70" >
+    <h2>Platform</h2>
+    <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview">
+      See More
+    </button>
+  </div>
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="{% static 'images/API.png'%}" height="70" >
+    <h2>Database</h2>
+    <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview2">
+      See More
+    </button>
+  </div>
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="{% static 'images/Python.png'%}" height="70">
+    <h2>Framework</h2>
+    <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview3">
+    See More
+    </button>
+  </div>
+</div>
+  <!-- Modal -->
+  <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalPreviewLabel">Platform</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mt-3">
+            <p class="h5">Pivotal Cloud</p><p class="lead">Cloud Foundry provided by Pivotal Web Services </p>
+            <p class="h5">Container</p><p class="lead">Site is container deployed via CLI and docker image staged by Diego.   </p>
+            <p class="h5">Build/Test/Deploy</p><p class="lead">As a small-scale website, building and testing is done on localhost with a single production server for deployment</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade right" id="exampleModalPreview2" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalPreviewLabel">Database</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="h5">Azure Cloud Service</p><p class="lead">Database services are provided by Microsoft Azure</p>
+          <p class="h5">Database structure</p><p class="lead">Database is hosted on an Azure MySQL server for easy integration with the Django framework</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade right" id="exampleModalPreview3" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalPreviewLabel">Django</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="h5"><img class="rounded-circle" src="{% static 'images/Python.png'%}" height="30"> Python:</p><p class="lead">With a background in Python, I opted for python as the web framework for this site.  It provided easy integration with database services on a robust platform</p>
+          <p class="h5"><img class="rounded-circle" src="{% static 'images/django.jpg'%}" height="30"> Django:</p><p class="lead">Django is one of Python's web frameworks. A web framework is a standard set of code, languages, and processes to deliver web applications.  Django is a robust web framework used as the framework for sites such as YouTube, Dropbox, Instagram, Pinterest, Spotify.</p>
+         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modals Complete-->
+{% endblock %}

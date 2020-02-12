@@ -23,7 +23,7 @@ cryptography==2.8
 DateTime==4.3
 defusedxml==0.6.0
 diff-match-patch==20181111
-Django==2.2.7
+Django==2.2.10
 django-bootstrap4==1.0.1
 django-chartjs==1.5.0
 django-comments-xtd==2.4.1

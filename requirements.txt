@@ -12,7 +12,7 @@ azure-nspkg==3.0.2
 backports.csv==1.0.7
 bitarray==1.1.0
 boto==2.49.0
-bottle==0.12.17
+bottle==0.12.20
 bottle-websocket==0.2.9
 certifi==2019.9.11
 cffi==1.12.3
